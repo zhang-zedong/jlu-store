@@ -43,7 +43,9 @@
             <ul class="dropdown-menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <% if current_user.is_admin %>
+                <li><a href="#">Something else here</a></li>
+              <% end %>
               <li role="separator" class="divider"></li>
               <li><%= link_to("Log out", destroy_user_session_path, method: :delete) %></li>
             </ul>
