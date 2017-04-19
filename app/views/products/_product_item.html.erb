@@ -1,5 +1,14 @@
-<tr>
-  <td><%= product.title %></td>
-  <td><%= product.quantity %></td>
-  <td><%= product.price %></td>
-</tr>
+<div class="col-md-2">
+  <div class="thumbnail">
+    <%= link_to product_path(product) do %>
+      <% if !product.image.blank? %>
+        <%= image_tag product.image.url(:thumb) %>
+      <% else %>
+        <%= image_tag "http://placehold.it/200x200?text=No Pic" %>
+      <% end %>
+      <div class="caption text-center">
+        <h4><%= product.title %> - ¥ <%= product.price %></h4>
+      </div>
+    <% end %>
+  </div>
+</div>

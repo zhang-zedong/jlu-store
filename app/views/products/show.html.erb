@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-6">
+    <% if !@product.image.blank? %>
+      <%= image_tag @product.image.url(:medium) %>
+    <% else %>
+      <%= image_tag "http://placehold.it/200x200?text=No Pic" %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <div class="container">
+      <h2><%= @product.title %></h2>
+      <hr>
+      <p><%= @product.description %></p>
+    </div>
+    <div class="pull-right">
+      <%= link_to("加入购物车", "#", class: "btn btn-lg btn-danger") %>
+    </div>
+  </div>
+</div>
