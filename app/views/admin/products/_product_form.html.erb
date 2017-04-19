@@ -3,5 +3,12 @@
   <%= f.input :description %>
   <%= f.input :quantity %>
   <%= f.input :price %>
+  <% if !@product.image.blank? %>
+    <%= image_tag @product.image.url(:medium) %>
+  <% else %>
+    <%= image_tag "http://placehold.it/200x200?text=No Pic" %>
+  <% end %>
+  <%= f.input :image %>
   <%= f.submit "Submit", class:"btn btn-primary", data:{disable_with: "Submiting..."} %>
+
 <% end %>
