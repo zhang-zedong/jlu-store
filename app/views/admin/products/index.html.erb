@@ -1,0 +1,13 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>title</th>
+      <th>quantity</th>
+      <th>price</th>
+      <th>option</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render :partial => "product_item", collection: @products, as: :product%>
+  </tbody>
+</table>
