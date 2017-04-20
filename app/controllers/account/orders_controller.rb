@@ -27,13 +27,9 @@ class Account::OrdersController < ApplicationController
   end
   def pay
     @order = Order.find(params[:id])
-    @order.pay!
-    if @order.save!
-      flash[:notice] = "付款成功"
-      redirect_to :back
-    else
-      redirect_to :back
-    end
+    @order.pay_order!
+    flash[:notice] = "付款成功"
+    redirect_to :back
   end
   private
   def order_params
