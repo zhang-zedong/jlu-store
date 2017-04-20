@@ -1,0 +1,30 @@
+<div class="col-md-12">
+
+  <table class="table table-bordered">
+    <thead>
+      <th >#</th>
+      <th>数量</th>
+      <th>单价</th>
+    </thead>
+    <tbody>
+      <% current_cart.cart_items.each do |cart_item| %>
+        <tr>
+          <td>
+            <%= link_to product_path(cart_item.product) do %>
+              <% if !cart_item.product.image.blank? %>
+                <%= image_tag cart_item.product.image.url(:thumb) %>
+              <% else %>
+                <%= image_tag "http://placehold.it/200x200?text=No Pic" %>
+              <% end %>
+              <%= cart_item.product.title %></td>
+            <% end %>
+          <td><%= cart_item.quantity %></td>
+          <td><%= cart_item.product.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="pull-right">
+    <%= link_to("生成订单", "#", class: "btn btn-lg btn-danger") %>
+  </div>
+</div>

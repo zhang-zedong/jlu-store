@@ -9,8 +9,12 @@
   <div class="col-md-6">
     <div class="container">
       <h2><%= @product.title %></h2>
-      <hr>
       <p><%= @product.description %></p>
+    </div>
+    <hr>
+    <div style="margin: 30px;">
+      <p>¥ <%= @product.price %></p>
+      <p>库存：<%= @product.quantity %></p>
     </div>
     <div class="pull-right">
       <%= link_to("加入购物车", add_to_cart_product_path(@product),method: :post, class: "btn btn-lg btn-danger") %>

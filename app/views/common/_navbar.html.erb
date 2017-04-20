@@ -36,7 +36,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to(current_cart.cart_items.count, "#")  %></li>
+        <li><%= link_to(current_cart.cart_items.count, cart_path(current_cart))  %></li>
         <% if current_user %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi, <%= current_user.email %><span class="caret"></span></a>
