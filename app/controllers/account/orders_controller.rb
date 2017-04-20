@@ -23,7 +23,17 @@ class Account::OrdersController < ApplicationController
     end
   end
   def show
-    @order = Order.find_by(params[:id])
+    @order = Order.find(params[:id])
+  end
+  def pay
+    @order = Order.find(params[:id])
+    @order.pay!
+    if @order.save!
+      flash[:notice] = "付款成功"
+      redirect_to :back
+    else
+      redirect_to :back
+    end
   end
   private
   def order_params

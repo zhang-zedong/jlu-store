@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     end
   end
   namespace :account do
-    resources :orders
+    resources :orders do
+      member do
+        post :pay
+      end
+    end
   end
   root "products#index"
 end

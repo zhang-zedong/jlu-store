@@ -36,7 +36,11 @@
     </tbody>
   </table>
   <div class="pull-right">
-    <%= link_to "付款", "#", class: "btn btn-lg btn-danger" %>
+    <% if !@order.is_paid %>
+      <%= link_to "付款", pay_account_order_path(@order),method: :post, class: "btn btn-lg btn-danger" %>
+    <% else %>
+      <p>已完成付款</p>
+    <% end %>
   </div>
 
 </div>
