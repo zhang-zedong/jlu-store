@@ -25,6 +25,9 @@
     </tbody>
   </table>
   <div class="pull-right">
+    <div class="container">
+      <p>总计：<%= render_total_price(current_cart) %> CNY</p>
+    </div>
     <%= link_to("生成订单", "#", class: "btn btn-lg btn-danger") %>
   </div>
 </div>
